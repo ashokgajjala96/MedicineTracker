@@ -4,10 +4,16 @@
 
 <div class="container mt-5">
     <div class="card pb-3">
-        <div class="d-flex card-header card-header-icon" data-background-color="rose">
-            <i class="material-icons backNav" style="cursor: pointer;" [routerLink]="''">keyboard_arrow_left</i>
-            <h4 class="card-title"> Medicine Name : <span class="orgName">{{medicineInfo.name}}</span></h4>
-            <button class="btn btn-success m-1 pull-right" data-toggle="modal" data-target="#editMedicineModel">Edit Medicine</button>
+        <div class="d-flex col-md-12 card-header ">
+            <div class="card-header-icon col-md-4 pt-2" data-background-color="rose">
+                <i class="material-icons backNav" style="cursor: pointer;" [routerLink]="''">keyboard_arrow_left</i>
+            </div>
+            <div class="col-md-4 pt-2">
+                <h4 class="card-title"> Medicine Name : <span class="orgName">{{medicineInfo.name}}</span></h4>
+            </div>
+            <div class="col-md-4 text-right pt-2">
+                <button class="btn btn-success m-1" data-toggle="modal" data-target="#editMedicineModel">Edit Medicine</button>
+            </div>
         </div>
         <!-- <div class="card-content">
           <h4 class="card-title">OrganizationName:<span class="orgName">{{medicineInfo.name}}</span></h4>

@@ -30,7 +30,6 @@ export class MedicineListComponent implements AfterViewInit, OnInit {
   constructor(private appService: AppService, private router: Router,  private spinner: NgxSpinnerService) {
     this.spinner.show();
     this.appService.getMedicineList().subscribe((res: any) => {
-      alert('success');
       this.spinner.hide();
       const medicineList = JSON.parse(JSON.stringify(res));
       medicineList.map(medicine => {
