@@ -1,0 +1,35 @@
+.notfound {
+    text-align: center;
+}
+
+.notfound .notfound-404 {
+    position: relative;
+    height: 180px;
+}
+
+.notfound .notfound-404 h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 165px;
+    font-weight: 500;
+    margin: 0px;
+    color: #4681d1;
+    text-transform: uppercase;
+}
+
+.notfound .notfound-404 h1>span {
+    color: #00b7ff;
+}
+
+.notfound h2 {
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #151515;
+    margin-top: 0px;
+    margin-bottom: 25px;
+}

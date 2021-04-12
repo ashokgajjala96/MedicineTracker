@@ -1,0 +1,47 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#f8500c" type="square-loader" [fullScreen]="false">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="Name">
+            <th mat-header-cell *matHeaderCellDef  > Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="Brand">
+            <th mat-header-cell *matHeaderCellDef  > Brand </th>
+            <td mat-cell *matCellDef="let row"> {{row.brand}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef  > Price </th>
+            <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef  > Quantity </th>
+            <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="ExpDate">
+            <th mat-header-cell *matHeaderCellDef  > ExpDate </th>
+            <td mat-cell *matCellDef="let row"> {{row.expDate}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)='viewMedicine(row.id)'class="example-element-row"  *matRowDef="let row; columns: displayedColumns;" [ngStyle]="{'background-color':row.backgroundColor}"></tr>
+    </table>
+    <div *ngIf="dataSource?.filteredData?.length === 0" class="text-center pt-2">No data matching the filter</div>
+    <mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
