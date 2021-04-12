@@ -42,7 +42,7 @@
         <!-- Color Column -->
         <ng-container matColumnDef="ExpDate">
             <th mat-header-cell *matHeaderCellDef> ExpDate </th>
-            <td mat-cell *matCellDef="let row"> {{row.expDate}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.expDate |  date:'shortDate'}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

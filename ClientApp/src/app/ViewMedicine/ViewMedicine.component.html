@@ -33,7 +33,7 @@
                             <td class="feildName label-bold">Price</td>
                             <td>{{medicineInfo?.price}}</td>
                             <td class="feildName label-bold">Exp Date</td>
-                            <td>{{medicineInfo?.expDate}}</td>
+                            <td>{{medicineInfo?.expDate | date:'shortDate'}}</td>
                         </tr>
                         <tr>
                             <td class="feildName label-bold">Quantity</td>
@@ -78,7 +78,7 @@
                         </mat-form-field>
                         <mat-form-field class="col-md-6 mb-1">
                             <mat-label>Quantity</mat-label>
-                            <input type="text" formControlName="quantity" autocomplete="off" matInput #quantity placeholder="Please Enter Medicine Quantity" required>
+                            <input type="number" formControlName="quantity" autocomplete="off" matInput #quantity placeholder="Please Enter Medicine Quantity" required>
                             <mat-error>Quantity Required!</mat-error>
                         </mat-form-field>
                     </div>
